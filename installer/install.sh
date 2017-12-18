@@ -2,13 +2,18 @@
 
 # author : Richard Tenorio@EPFL
 # use : install apps
+# mail : richard.martinstenorio@epfl.ch
+# #####################################
 clear
 # list of app to check
 declare -a apps=( "Firefox" "ENACdrive" "VLC")
 
 # function to download the installer
 function download_app () {
-  curl -u sharing:sharing -O http://it3pc1.epfl.ch/Share/$1.pkg.zip
+  # mount
+  # scp
+  # cat to see the error
+  curl --proto-redir -all,smb -u sharing:sharing -L -O "smb://it3pc1.epfl.ch/Share/ENACdrive.pkg"
   app=$1'.pkg.zip'
   install_app $app
 
@@ -39,7 +44,7 @@ function check_app () {
 
 check_app
 
-# rm -R ~/installer_app
+rm -R ~/installer_app
 # END MAIN #
 
 # END script
