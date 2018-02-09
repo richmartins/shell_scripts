@@ -13,12 +13,13 @@ function download_app () {
   # mount
   # scp
   # cat to see the error
-  curl --proto-redir -all,smb -u sharing:sharing -L -O "smb://it3pc1.epfl.ch/Share/ENACdrive.pkg"
+  curl --proto-redir -all,smb -u installer:a12345678A -L -O "http://enacit3pc100.epfl.ch/Share_APP"
   app=$1'.pkg.zip'
   install_app $app
 
 }
 function install_app () {
+  # need to verify if it is a .dmg or .pkg
   unzip -a $1
   installer -pkg $1 -target /
 }
