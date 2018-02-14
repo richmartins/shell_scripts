@@ -6,7 +6,7 @@
 # #####################################
 clear
 # list of app to check
-declare -a apps=( "Firefox" "ENACdrive" "VLC")
+declare -a apps=( "Firefox" "ENACdrive" "VLC");
 
 # function to download the installer
 function download_app () {
